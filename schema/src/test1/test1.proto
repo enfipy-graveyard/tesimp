@@ -1,0 +1,9 @@
+syntax = "proto3";
+package test1;
+option go_package = "test1";
+
+import "common.proto";
+
+message Test1 {
+  common.TestCommon test = 1;
+}

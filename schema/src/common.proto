@@ -1,0 +1,14 @@
+syntax = "proto3";
+package common;
+
+/*** Common ***/
+
+message TestCommon {
+  uint64 foo = 1;
+  TestEnum bar = 2;
+}
+
+enum TestEnum {
+  FOO = 0;
+  BAR = 1;
+}
