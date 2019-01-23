@@ -15,7 +15,7 @@ function genDir {
 
   out="gen/$dir/go"
   mkdir -p $out
-  protoc -I./src -I./src/$dir --go_out=plugins=grpc:$out common.proto $filenames
+  protoc -I./src -I./src/$dir --go_out=plugins=grpc:$out $filenames
 }
 
 function start {
@@ -23,6 +23,14 @@ function start {
 
   passedDirs=$1
   uniqueFolders=`echo -e $passedDirs | uniq`
+
+  echo "Generating protobuf for common.proto"
+
+  out="gen/common/go"
+  mkdir -p $out
+  protoc -I./src --go_out==plugins=grpc:$out common.proto
+  mv $out/github.com/enfipy/tesimp/schema/gen/common/go/* $out
+  rm -rf $out/github.com
 
   for folder in $uniqueFolders
   do

@@ -5,6 +5,7 @@ package test2
 
 import (
 	fmt "fmt"
+	_go "github.com/enfipy/tesimp/schema/gen/common/go"
 	proto "github.com/golang/protobuf/proto"
 	math "math"
 )
@@ -21,10 +22,10 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 type Test2 struct {
-	Test                 *TestCommon `protobuf:"bytes,1,opt,name=test,proto3" json:"test,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
-	XXX_unrecognized     []byte      `json:"-"`
-	XXX_sizecache        int32       `json:"-"`
+	Test                 *_go.TestCommon `protobuf:"bytes,1,opt,name=test,proto3" json:"test,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
+	XXX_unrecognized     []byte          `json:"-"`
+	XXX_sizecache        int32           `json:"-"`
 }
 
 func (m *Test2) Reset()         { *m = Test2{} }
@@ -52,7 +53,7 @@ func (m *Test2) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Test2 proto.InternalMessageInfo
 
-func (m *Test2) GetTest() *TestCommon {
+func (m *Test2) GetTest() *_go.TestCommon {
 	if m != nil {
 		return m.Test
 	}

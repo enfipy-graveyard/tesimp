@@ -1,0 +1,8 @@
+{
+  "protoc": {
+    "options": [
+      "--proto_path=${workspaceRoot}/src",
+    ]
+  },
+  "mssql.intelliSense.enableIntelliSense": false
+}
